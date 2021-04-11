@@ -83,12 +83,12 @@ client.on("message", message => {
             .map(z => z.url)
             .includes(link)
         )
-             return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
-        message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
+             return message.channel.send(new discord.MessageEmbed().setFooter("Adem Reyzz Uptime").setColor("RED").setDescription("Projeniz Sistemimizde Zaten Var"));
+        message.channel.send(new discord.MessageEmbed().setFooter("Adem Reyzz Uptime").setColor("RED").setDescription("Projeniz Sistemimize Başarıyla Eklendi."));
         db.push("linkler", { url: link, owner: message.author.id });
       })
       .catch(e => {
-        return message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
+        return message.channel.send(new discord.MessageEmbed().setFooter("Adem Reyzz Uptime").setColor("RED").setDescription("Lütfen Bir Link Giriniz"));
       });
   }
 });
@@ -98,7 +98,7 @@ client.on("message", message => {
   var spl = message.content.split(" ");
   if (spl[0] == "a.göster") {
     var link = spl[1];
-    message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
+    message.channel.send(new discord.MessageEmbed().setFooter("Adem Reyzz Uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
 });
 
