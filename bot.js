@@ -1,7 +1,7 @@
 const db = require("quick.db");
 const discord = require("discord.js");
 const client = new discord.Client({ disableEveryone: true });
-client.login("NzgwNzc0NzMwMDQ2NTA0OTYz.X7z_IQ.lKfeDPDEjDpAlGAbdwFrs-9ZxYg");
+client.login(process.env.Token);
 const fetch = require("node-fetch");
 const fs = require("fs");
 require("express")().listen(1343);
@@ -58,10 +58,10 @@ client.on("ready", () => {
 //embed hazırlıkları
 
 const help = new discord.MessageEmbed()
-.setFooter("plasmic uptime yardımcısı")
+.setFooter("adem reyzz uptime yardımcısı")
 .setColor("RED")
 .setThumbnail('https://i.imgur.com/4M7IWwP.gif')
-.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`!ekle [glitch linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`!göster\` `)
+.setDescription(`Selamlar, botunu uptime etmeye hazırmısın? \n artık kolay bir şekilde botunu 7/24 aktif edebilirsin! \n\n🤹 uptime olmak için \`a.ekle [glitch linki]\` yazabilirsin \n🎭 Uptime ettiğin botlarımı görmek istiyorsun \`a.göster\` `)
 
 
 
@@ -73,7 +73,7 @@ const help = new discord.MessageEmbed()
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!ekle") {
+  if (spl[0] == "a.ekle") {
     var link = spl[1];
     fetch(link)
       .then(() => {
@@ -96,7 +96,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!göster") {
+  if (spl[0] == "a.göster") {
     var link = spl[1];
     message.channel.send(new discord.MessageEmbed().setFooter("Plasmic-uptime").setColor("RED").setDescription(`${db.get("linkler").length} Proje Aktif Tutuluyor!`));
   }
@@ -105,7 +105,7 @@ client.on("message", message => {
 client.on("message", message => {
   if (message.author.bot) return;
   var spl = message.content.split(" ");
-  if (spl[0] == "!yardım") {
+  if (spl[0] == "a.yardım") {
     var link = spl[1];
     message.channel.send(help);
   }
