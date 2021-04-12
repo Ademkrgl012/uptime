@@ -3,10 +3,11 @@
     "start": "node bot.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "quick.db": "^7.1.2",
     "discord.js": "^12.5.2",
-    "node-fetch": "^2.6.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "quick.db": "^7.1.2",
+    "sqlite3": "^5.0.2"
   },
   "engines": {
     "node": "12.x"
